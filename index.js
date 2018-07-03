@@ -10,14 +10,29 @@ document.body.appendChild(greySq)
 
 }
 
+function test2()
+{
+
+var redSq = document.createElement('div')
+redSq.style.height = '150px'
+redSq.style.width = '150px'
+redSq.style.backgroundColor = 'red'
+redSq.style.display = 'inline-block'
+document.body.appendChild(redSq)
+
+}
+
 function display()
 {
-	for(i=0;i<7;i++)
+	for(i=0;i<9;i++)
 	{
-		test();
 		if(i%3==0)
 		{
-		document.body.appendChild("<br>")
+			test()
+		}
+		else
+		{
+			test2()
 		}
 	}
 	
