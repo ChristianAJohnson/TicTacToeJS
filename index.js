@@ -1,6 +1,9 @@
+var chessboard = ["-","-","-","-","-","-","-","-","-"]
+var wins= [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6] ];
+
 function DisplayBoard()
 {
-	for(let i=0;i<9;i++)
+	for(let i=0;i<=8;i++)
 	{
 		// this was to combine the word "box" and the number from the for loop (i) so that they can be assigned unqiue id's 
 		// var temp1 = "boxid"
@@ -11,13 +14,16 @@ function DisplayBoard()
 		newbox.style.height = "150px"
 		newbox.style.width = "150px"
 		newbox.style.display = "inline-block"
+		newbox.style.margin = "0px"
+	
+
 		// newbox.setAttribute("id",box) //assign each box an ID
 		newbox.setAttribute("id",i) //assign each box an ID from the for loop (i)
 		newbox.setAttribute("class","boxclass") // give all the boxes a class called "boxclass"
 
-		if(i==3 || i==6)
+		if(i==3 || i==6	)
 		{
-			var newline = document.createElement("div")
+			var newline = document.createElement("span")
 			newline.innerHTML = "<br>"
 			document.body.appendChild(newline)
 		}
@@ -57,28 +63,28 @@ function CheckBoxes()
 	// 	console.log("You clicked the 7th Box")
 	// })
 var boxclass = document.getElementsByClassName("boxclass")
-	for(let i=0;i<boxclass.length;i++)
+	for(let i=0;i<=boxclass.length;i++)
 	{
 		boxclass[i].addEventListener("click", function()
 		{
 			boxclass[i].innerHTML = "&#10006"
-			console.log("You clicked box number " + boxclass[i].id)	
+			console.log("You clicked box number " + boxclass[i].id)
+			if(chessboard[i]!= "X")
+			{	
+				chessboard.splice(i,0,"X")
+			}
+			console.log(chessboard)
+			ChessBot();
+
 		})
 	}
 
+}	
 
-}
-
-function Cross(position)
+function ChessBot()
 {
-
+	console.log
 }
-
-function Zero(position)
-{
-	
-}
-
 
 
 
