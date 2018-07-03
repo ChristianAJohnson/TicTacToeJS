@@ -17,7 +17,7 @@ function display()
 		test();
 		if(i%3==0)
 		{
-			
+		document.body.appendChild("<br>")
 		}
 	}
 	
