@@ -46,8 +46,8 @@ function DisplayBoard()
 // DisplayBoard();	
 // ChessBot();
 // ZeroBoxes2(3);
-// CheckWinner();
-CheckChessBoard()
+CheckWinner();
+// CheckChessBoard()
 
 function CheckBoxes()
 {
