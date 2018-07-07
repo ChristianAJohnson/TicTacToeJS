@@ -38,14 +38,15 @@ function DisplayBoard()
 
 		document.body.appendChild(newbox)
 	}
-	// CheckBoxes()
+	CheckBoxes();
 	// ZeroBoxes();
 	
 }
 
-DisplayBoard();	
+// DisplayBoard();	
 // ChessBot();
-ZeroBoxes2(3);
+// ZeroBoxes2(3);
+CheckWinner();
 
 function CheckBoxes()
 {
@@ -92,7 +93,11 @@ function ChessBot()
 	// console.log(wins[0][0]) //this is how you access the nested arrays
 	// console.log(wins[0][1]) //this is how you access the nested arrays
 	// console.log(wins[0][2]) //this is how you access the nested arrays
-	// console.log(wins[0].length)
+	
+	console.log(wins.length)
+	console.log(wins[0].length)
+	CheckWinner();
+
 }
 
 function ZeroBoxes()
@@ -121,16 +126,29 @@ function ZeroBoxes()
 function ZeroBoxes2(postion)
 {
 	var boxclass = document.getElementsByClassName("boxclass")
-			if(chessboard[postion]!= "O")
-			{	
-				if(chessboard[postion]!= "X")
-				{
-				boxclass[postion].innerHTML = "&#9898"
-				chessboard.splice(postion,0,"O")
-				}
+		if(chessboard[postion]!= "O")
+		{	
+			if(chessboard[postion]!= "X")
+			{
+			boxclass[postion].innerHTML = "&#9898"
+			chessboard.splice(postion,0,"O")
 			}
-			console.log(chessboard)
-			// ChessBot();
+		}
+		console.log(chessboard)
+		// ChessBot();
+}
+
+function CheckWinner()
+{
+
+	for(let i=0;i<wins.length;i++)
+		{
+			for(let j=0;j<wins[i].length;j++)
+			{
+				console.log(wins[i][j])
+			}
+		}
+
 }
 
 
