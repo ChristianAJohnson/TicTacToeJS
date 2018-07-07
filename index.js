@@ -38,12 +38,14 @@ function DisplayBoard()
 
 		document.body.appendChild(newbox)
 	}
-	CheckBoxes()
+	// CheckBoxes()
+	// ZeroBoxes();
 	
 }
 
-// DisplayBoard();	
-ChessBot();
+DisplayBoard();	
+// ChessBot();
+ZeroBoxes2(3);
 
 function CheckBoxes()
 {
@@ -72,7 +74,10 @@ var boxclass = document.getElementsByClassName("boxclass")
 			console.log("You clicked box number " + boxclass[i].id)
 			if(chessboard[i]!= "X")
 			{	
+				if(chessboard[i]!= "O")
+				{
 				chessboard.splice(i,0,"X")
+				}
 			}
 			console.log(chessboard)
 			ChessBot();
@@ -84,13 +89,49 @@ var boxclass = document.getElementsByClassName("boxclass")
 
 function ChessBot()
 {
-	console.log(wins[0][0])
-	console.log(wins[0][1])
-	console.log(wins[0][2])
-	console.log(wins[0].length)
+	// console.log(wins[0][0]) //this is how you access the nested arrays
+	// console.log(wins[0][1]) //this is how you access the nested arrays
+	// console.log(wins[0][2]) //this is how you access the nested arrays
+	// console.log(wins[0].length)
 }
 
+function ZeroBoxes()
+{
+	var boxclass = document.getElementsByClassName("boxclass")
+	for(let i=0;i<=boxclass.length;i++)
+	{
+		boxclass[i].addEventListener("click", function()
+		{
+			boxclass[i].innerHTML = "&#9898"
+			console.log("You clicked box number " + boxclass[i].id)
+			if(chessboard[i]!= "O")
+			{	
+				if(chessboard[i]!= "X")
+				{
+				chessboard.splice(i,0,"O")
+				}
+			}
+			console.log(chessboard)
+			ChessBot();
 
+		})
+	}
+}
+
+function ZeroBoxes2(postion)
+{
+	var boxclass = document.getElementsByClassName("boxclass")
+			if(chessboard[postion]!= "O")
+			{	
+				if(chessboard[postion]!= "X")
+				{
+				boxclass[postion].innerHTML = "&#9898"
+				chessboard.splice(postion,0,"O")
+				}
+			}
+			console.log(chessboard)
+			// ChessBot();
+}
 
 
 
