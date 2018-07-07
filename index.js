@@ -46,7 +46,8 @@ function DisplayBoard()
 // DisplayBoard();	
 // ChessBot();
 // ZeroBoxes2(3);
-CheckWinner();
+// CheckWinner();
+CheckChessBoard()
 
 function CheckBoxes()
 {
@@ -142,14 +143,25 @@ function CheckWinner()
 {
 
 	for(let i=0;i<wins.length;i++)
+	{
+		for(let j=0;j<wins[i].length;j++)
 		{
-			for(let j=0;j<wins[i].length;j++)
-			{
-				console.log(wins[i][j])
-			}
+			console.log(wins[i][j])			
 		}
+		console.log("|")
+	}
 
 }
+
+function CheckChessBoard(number)
+{
+	for(let i=0;i<chessboard.length;i++)
+	{
+		console.log([i])
+		console.log(chessboard[i])
+	}
+}
+
 
 
 
