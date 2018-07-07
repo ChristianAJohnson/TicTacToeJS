@@ -42,7 +42,8 @@ function DisplayBoard()
 	
 }
 
-DisplayBoard();	
+// DisplayBoard();	
+ChessBot();
 
 function CheckBoxes()
 {
@@ -83,7 +84,10 @@ var boxclass = document.getElementsByClassName("boxclass")
 
 function ChessBot()
 {
-	console.log
+	console.log(wins[0][0])
+	console.log(wins[0][1])
+	console.log(wins[0][2])
+	console.log(wins[0].length)
 }
 
 
