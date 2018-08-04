@@ -148,7 +148,7 @@ function CheckWinner()
 				total += 1;
 				if(total==3)
 				{
-					console.log("You are a winner")
+					window.alert("You are a winner")
 				}
 			}			
 		}
