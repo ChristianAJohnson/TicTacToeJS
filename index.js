@@ -133,7 +133,7 @@ function ZeroBoxes2(postion)
 		// ChessBot();
 }
 
-function CheckWinner()
+// function CheckWinner()
 {
 	var total = 0
 
@@ -157,6 +157,22 @@ function CheckWinner()
 	}
 
 }
+
+function CheckWinner()
+{
+	for(let i=0;i<wins.length;i++)
+	{
+		var position1 = wins[i][0]  
+		var position2 = wins[i][1]
+		var position3 = wins[i][2]
+
+		if(chessboard[position1]== "X" && chessboard[position2]== "X" && chessboard[position3]== "X")
+		{
+			window.alert("You are a winner")
+		}
+	}
+}
+
 
 function CheckChessBoard(number)
 {
