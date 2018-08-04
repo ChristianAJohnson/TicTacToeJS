@@ -43,12 +43,6 @@ function DisplayBoard()
 	
 }
 
-// DisplayBoard();	
-// ChessBot();
-// ZeroBoxes2(3);
-CheckWinner();
-// CheckChessBoard()
-
 function CheckBoxes()
 {
 	// var boxid0 = document.getElementById("boxid0");
@@ -141,14 +135,25 @@ function ZeroBoxes2(postion)
 
 function CheckWinner()
 {
+	var total = 0
 
 	for(let i=0;i<wins.length;i++)
 	{
 		for(let j=0;j<wins[i].length;j++)
 		{
-			console.log(wins[i][j])			
+			console.log(wins[i][j])
+			var position = wins[i][j]
+			if(chessboard[position]== "X")
+			{
+				total += 1;
+				if(total==3)
+				{
+					console.log("You are a winner")
+				}
+			}			
 		}
 		console.log("|")
+		total = 0
 	}
 
 }
@@ -162,6 +167,11 @@ function CheckChessBoard(number)
 	}
 }
 
+DisplayBoard();	
+// ChessBot();
+// ZeroBoxes2(3);
+// CheckWinner();
+// CheckChessBoard()
 
 
 
