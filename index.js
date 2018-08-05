@@ -75,7 +75,7 @@ var boxclass = document.getElementsByClassName("boxclass")
 				chessboard.splice(i,0,"X")
 				}
 			}
-			console.log(chessboard)
+			// console.log(chessboard)
 			ChessBot();
 
 		})
@@ -89,8 +89,8 @@ function ChessBot()
 	// console.log(wins[0][1]) //this is how you access the nested arrays
 	// console.log(wins[0][2]) //this is how you access the nested arrays
 	
-	console.log(wins.length)
-	console.log(wins[0].length)
+	// console.log(wins.length)
+	// console.log(wins[0].length)
 	CheckWinner();
 
 }
