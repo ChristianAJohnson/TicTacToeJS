@@ -169,8 +169,7 @@ function CheckWinner()
 		if(chessboard[position1]== "X" && chessboard[position2]== "X" && chessboard[position3]== "X")
 		{
 			window.alert("The X's have Won!")
-			location.reload();
-
+			location.reload(true);
 		}
 	}
 }
