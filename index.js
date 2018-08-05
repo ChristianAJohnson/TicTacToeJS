@@ -72,7 +72,7 @@ var boxclass = document.getElementsByClassName("boxclass")
 			{	
 				if(chessboard[i]!= "O")
 				{
-				chessboard.splice(i,0,"X")
+					chessboard.splice(i,0,"X")
 				}
 			}
 			// console.log(chessboard)
@@ -108,7 +108,7 @@ function ZeroBoxes()
 			{	
 				if(chessboard[i]!= "X")
 				{
-				chessboard.splice(i,0,"O")
+					chessboard.splice(i,0,"O")
 				}
 			}
 			console.log(chessboard)
@@ -125,8 +125,8 @@ function ZeroBoxes2(postion)
 		{	
 			if(chessboard[postion]!= "X")
 			{
-			boxclass[postion].innerHTML = "&#9898"
-			chessboard.splice(postion,0,"O")
+				boxclass[postion].innerHTML = "&#9898"
+				chessboard.splice(postion,0,"O")
 			}
 		}
 		console.log(chessboard)
