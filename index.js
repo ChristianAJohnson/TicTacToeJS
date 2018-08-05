@@ -67,7 +67,7 @@ var boxclass = document.getElementsByClassName("boxclass")
 		boxclass[i].addEventListener("click", function()
 		{
 			boxclass[i].innerHTML = "&#10006"
-			console.log("You clicked box number " + boxclass[i].id)
+			// console.log("You clicked box number " + boxclass[i].id)
 			if(chessboard[i]!= "X")
 			{	
 				if(chessboard[i]!= "O")
@@ -75,7 +75,7 @@ var boxclass = document.getElementsByClassName("boxclass")
 				chessboard.splice(i,0,"X")
 				}
 			}
-			console.log(chessboard)
+			// console.log(chessboard)
 			ChessBot();
 
 		})
@@ -89,8 +89,8 @@ function ChessBot()
 	// console.log(wins[0][1]) //this is how you access the nested arrays
 	// console.log(wins[0][2]) //this is how you access the nested arrays
 	
-	console.log(wins.length)
-	console.log(wins[0].length)
+	// console.log(wins.length)
+	// console.log(wins[0].length)
 	CheckWinner();
 
 }
@@ -134,29 +134,29 @@ function ZeroBoxes2(postion)
 }
 
 // function CheckWinner()
-{
-	var total = 0
+// {
+// 	var total = 0
 
-	for(let i=0;i<wins.length;i++)
-	{
-		for(let j=0;j<wins[i].length;j++)
-		{
-			console.log(wins[i][j])
-			var position = wins[i][j]
-			if(chessboard[position]== "X")
-			{
-				total += 1;
-				if(total==3)
-				{
-					window.alert("You are a winner")
-				}
-			}			
-		}
-		console.log("|")
-		total = 0
-	}
+// 	for(let i=0;i<wins.length;i++)
+// 	{
+// 		for(let j=0;j<wins[i].length;j++)
+// 		{
+// 			console.log(wins[i][j])
+// 			var position = wins[i][j]
+// 			if(chessboard[position]== "X")
+// 			{
+// 				total += 1;
+// 				if(total==3)
+// 				{
+// 					window.alert("The X's have Won!")
+// 				}
+// 			}			
+// 		}
+// 		console.log("|")
+// 		total = 0
+// 	}
 
-}
+// }
 
 function CheckWinner()
 {
@@ -168,7 +168,9 @@ function CheckWinner()
 
 		if(chessboard[position1]== "X" && chessboard[position2]== "X" && chessboard[position3]== "X")
 		{
-			window.alert("You are a winner")
+			window.alert("The X's have Won!")
+			location.reload();
+
 		}
 	}
 }
