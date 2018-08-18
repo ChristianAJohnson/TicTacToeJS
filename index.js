@@ -93,6 +93,7 @@ function ChessBot()
 	// console.log(wins.length)
 	// console.log(wins[0].length)
 	CheckWinner();
+	ZeroBoxes2(3);
 
 }
 
@@ -170,6 +171,11 @@ function CheckWinner()
 		if(chessboard[position0]== "X" && chessboard[position1]== "X" && chessboard[position2]== "X")
 		{
 			window.alert("The X's have Won!")
+			location.reload(true);
+		}
+		else if(chessboard[position0]== "O" && chessboard[position1]== "O" && chessboard[position2]== "O")
+		{
+			window.alert("The O's have Won, the Tic-Tac-Toe Bot beat you.")
 			location.reload(true);
 		}
 	}
