@@ -94,6 +94,8 @@ function ChessBot()
 	// console.log(wins[0].length)
 	CheckWinner();
 	ZeroBoxes2(3);
+	ZeroBoxes2(4);
+	ZeroBoxes2(5);
 
 }
 
