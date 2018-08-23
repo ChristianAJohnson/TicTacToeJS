@@ -77,6 +77,7 @@ var boxclass = document.getElementsByClassName("boxclass")
 				}
 			}
 			// console.log(chessboard)
+			CheckWinner();
 			ChessBot();
 
 		})
@@ -92,10 +93,13 @@ function ChessBot()
 	
 	// console.log(wins.length)
 	// console.log(wins[0].length)
-	CheckWinner();
+	
 	ZeroBoxes2(3);
+		// CheckWinner();
 	ZeroBoxes2(4);
+		// CheckWinner();
 	ZeroBoxes2(5);
+		CheckWinner();
 
 }
 
@@ -125,15 +129,16 @@ function ChessBot()
 function ZeroBoxes2(postion)
 {
 	var boxclass = document.getElementsByClassName("boxclass")
-		if(chessboard[postion]!= "O")
-		{	
-			if(chessboard[postion]!= "X")
-			{
-				boxclass[postion].innerHTML = "&#9898"
-				chessboard.splice(postion,0,"O")
-			}
+
+	if(chessboard[postion]!= "O")
+	{	
+		if(chessboard[postion]!= "X")
+		{
+			boxclass[postion].innerHTML = "&#9898"
+			chessboard.splice(postion,0,"O")
 		}
-		console.log(chessboard)
+	}
+	console.log(chessboard)
 		// ChessBot();
 }
 
@@ -177,7 +182,7 @@ function CheckWinner()
 		}
 		else if(chessboard[position0]== "O" && chessboard[position1]== "O" && chessboard[position2]== "O")
 		{
-			window.alert("The O's have Won, the Tic-Tac-Toe Bot beat you.")
+			window.alert("The O's have Won, the Tic-Tac-Toe Bot beaten you!")
 			location.reload(true);
 		}
 	}
