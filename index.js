@@ -1,5 +1,7 @@
 var chessboard = ["-","-","-","-","-","-","-","-","-"]
+
 var wins= [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6] ];
+// var wins= [ [0,1,2], [5,4,3], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6] ];
 
 function DisplayBoard()
 {
@@ -15,7 +17,6 @@ function DisplayBoard()
 		newbox.style.width = "150px"
 		newbox.style.display = "inline-block"
 		newbox.style.margin = "0px"
-	
 
 		// newbox.setAttribute("id",box) //assign each box an ID
 		newbox.setAttribute("id",i) //assign each box an ID from the for loop (i)
@@ -72,10 +73,11 @@ var boxclass = document.getElementsByClassName("boxclass")
 			{	
 				if(chessboard[i]!= "O")
 				{
-				chessboard.splice(i,0,"X")
+					chessboard.splice(i,0,"X")
 				}
 			}
 			// console.log(chessboard)
+			CheckWinner();
 			ChessBot();
 
 		})
@@ -91,45 +93,52 @@ function ChessBot()
 	
 	// console.log(wins.length)
 	// console.log(wins[0].length)
-	CheckWinner();
+	
+	ZeroBoxes2(3);
+		// CheckWinner();
+	ZeroBoxes2(4);
+		// CheckWinner();
+	ZeroBoxes2(5);
+		CheckWinner();
 
 }
 
-function ZeroBoxes()
-{
-	var boxclass = document.getElementsByClassName("boxclass")
-	for(let i=0;i<=boxclass.length;i++)
-	{
-		boxclass[i].addEventListener("click", function()
-		{
-			boxclass[i].innerHTML = "&#9898"
-			console.log("You clicked box number " + boxclass[i].id)
-			if(chessboard[i]!= "O")
-			{	
-				if(chessboard[i]!= "X")
-				{
-				chessboard.splice(i,0,"O")
-				}
-			}
-			console.log(chessboard)
-			ChessBot();
+// function ZeroBoxes()
+// {
+// 	var boxclass = document.getElementsByClassName("boxclass")
+// 	for(let i=0;i<=boxclass.length;i++)
+// 	{
+// 		boxclass[i].addEventListener("click", function()
+// 		{
+// 			boxclass[i].innerHTML = "&#9898"
+// 			console.log("You clicked box number " + boxclass[i].id)
+// 			if(chessboard[i]!= "O")
+// 			{	
+// 				if(chessboard[i]!= "X")
+// 				{
+// 					chessboard.splice(i,0,"O")
+// 				}
+// 			}
+// 			console.log(chessboard)
+// 			ChessBot();
 
-		})
-	}
-}
+// 		})
+// 	}
+// }
 
 function ZeroBoxes2(postion)
 {
 	var boxclass = document.getElementsByClassName("boxclass")
-		if(chessboard[postion]!= "O")
-		{	
-			if(chessboard[postion]!= "X")
-			{
+
+	if(chessboard[postion]!= "O")
+	{	
+		if(chessboard[postion]!= "X")
+		{
 			boxclass[postion].innerHTML = "&#9898"
 			chessboard.splice(postion,0,"O")
-			}
 		}
-		console.log(chessboard)
+	}
+	console.log(chessboard)
 		// ChessBot();
 }
 
@@ -162,15 +171,19 @@ function CheckWinner()
 {
 	for(let i=0;i<wins.length;i++)
 	{
-		var position1 = wins[i][0]  
-		var position2 = wins[i][1]
-		var position3 = wins[i][2]
+		var position0 = wins[i][0]  
+		var position1 = wins[i][1]
+		var position2 = wins[i][2]
 
-		if(chessboard[position1]== "X" && chessboard[position2]== "X" && chessboard[position3]== "X")
+		if(chessboard[position0]== "X" && chessboard[position1]== "X" && chessboard[position2]== "X")
 		{
 			window.alert("The X's have Won!")
-			location.reload();
-
+			location.reload(true);
+		}
+		else if(chessboard[position0]== "O" && chessboard[position1]== "O" && chessboard[position2]== "O")
+		{
+			window.alert("The O's have Won, the Tic-Tac-Toe Bot beaten you!")
+			location.reload(true);
 		}
 	}
 }
